@@ -8,14 +8,19 @@ use master branch as a clean playground template. Libraries included are:
 - typescript
 - gulp (compiles and concats typescript and LESS)
 
-**Globally installed pre-requisites:
-node.js, npm, bower, gulp, typescript, tsd, http-server
-other than node and npm, the rest can be installed globally with: npm install -g name
+Pre-requisites- the following packages need to be installed globally:
+- node (installer from nodejs.org)
+- npm (comes with node)
+- bower (npm install bower -g)
+- gulp (npm install gulp -g)
+- typescript (npm install typescript -g)
+- tsd (npm install tsd -g)
+- http-server (npm install http-server -g)
 
-To setup, go to the root directory of the project and run the following commands:
+Setting up- in the project root folder, run the following commands in the terminal:
 - npm install
 - bower install
 - tsd install
-- http-server
+- gulp (launches a file watcher, so this process won't end)
 
-lastly, navigate to the the "public" directory, and run http-server
+lastly, open a new terminal, navigate to the the "public" directory, and run http-server
