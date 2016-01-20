@@ -1,0 +1,12 @@
+html,
+body {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0eWxlcy5sZXNzIiwidGVzdC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0FBQU07RUFDTCxrQkFBQTtFQUNBLGNBQUE7RUFDQSxXQUFBOzs7QUNIRDtFQUNDLHNCQUFBIiwiZmlsZSI6InN0eWxlcy5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJodG1sLCBib2R5IHtcclxuXHRwb3NpdGlvbjogcmVsYXRpdmU7XHJcblx0ZGlzcGxheTogYmxvY2s7XHJcblx0d2lkdGg6IDEwMCU7XHJcbn0iLCJkaXYge1xyXG5cdGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbn0iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0= */
