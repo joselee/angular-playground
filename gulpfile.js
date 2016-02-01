@@ -14,14 +14,10 @@ gulp.task("default", ["styles", "scripts"], function(){
 	gulp.watch(["public/scripts/**/*.ts"], ["scripts"]);
 });
 
+gulp.task("build", ["styles", "scripts"]);
+
 gulp.task("styles", function(){
 	del.sync("public/build/*.css");
-
-	var vendorStyles = gulp.src(mainBowerFiles())
-		.pipe(filter("**/*.less"))
-		.pipe(less())
-		.pipe(concat("vendorStyles.css"))
-		.pipe(gulp.dest("public/build"))
 
 	var styles = gulp.src(["public/styles/**/*.less"])
 		.pipe(sourcemaps.init())
@@ -34,16 +30,25 @@ gulp.task("styles", function(){
 gulp.task("scripts", function(){
 	del.sync(["public/build/*.js"]);
 
-	var lib = gulp.src(mainBowerFiles())
-		.pipe(filter(["**/*.js", "!bootstrap.js"]))
-		.pipe(concat("libs.js"))
-		.pipe(uglify())
-		.pipe(gulp.dest("public/build"));
-
 	var app = gulp.src(["public/scripts/**/*.ts", "typings/*.d.ts"])
 		.pipe(sourcemaps.init())
 		.pipe(ts({sortOutput: true, target: "es5"}))
 		.pipe(concat("app.js"))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest("public/build"));
+});
+
+gulp.task("vendor", function(){
+	del.sync(["public/build/vendor/*.*"]);
+	var lib = gulp.src(mainBowerFiles())
+		.pipe(filter(["**/*.js", "!bootstrap.js"]))
+		.pipe(concat("libs.js"))
+		.pipe(uglify())
+		.pipe(gulp.dest("public/build/vendor"));
+
+	var vendorStyles = gulp.src(mainBowerFiles())
+		.pipe(filter("**/*.less"))
+		.pipe(less())
+		.pipe(concat("vendorStyles.css"))
+		.pipe(gulp.dest("public/build/vendor"));
 });
