@@ -1,12 +1,10 @@
 module app {
-	var test = angular.module("app", []);
-	
-	export class myController {
-		foo: string;
-		constructor(){
+	export class Controller {
+		public foo: string;
+		static $inject = ["Service"];
+		constructor(service){
 			this.foo = "foo";
-			console.log(this.foo);
 		}
 	}
-	test.controller("myController", [myController]);
+	app.controller("Controller", Controller);
 }
