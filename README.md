@@ -10,7 +10,7 @@ Only use the master branch as a clean playground template. Feature testing shoul
 - typescript
 - gulp (compiles and concats typescript and LESS)
 
-#### Pre-requisites- the following packages need to be installed globally:
+#### Global dependencies:
 - node (installer from nodejs.org)
 - npm (comes with node)
 - bower (npm install bower -g)
@@ -19,10 +19,11 @@ Only use the master branch as a clean playground template. Feature testing shoul
 - tsd (npm install tsd -g)
 - http-server (npm install http-server -g)
 
-#### Setting up- in the project root folder, run the following commands in the terminal:
+#### Setup:
 - npm install
 - bower install
 - tsd install
-- gulp (*launches a file watcher, so this process won't end*)
+- gulp vendor (*builds js and css from bower libraries*)
+- gulp (*builds and watches application code*)
 
 lastly, open a new terminal, navigate to the the **public/** directory, and run http-server
