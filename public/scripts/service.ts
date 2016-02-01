@@ -19,15 +19,26 @@ module app {
 
 	export class Widgets {
 		public widgetA: WidgetA;
+		public widgetB: WidgetB;
 		constructor(){
 			this.widgetA = new WidgetA();
+			this.widgetB = new WidgetB();
 		}
 	}
 
+	export interface IConfig {
+		col: number;
+		row: number;
+		sizeX: number;
+		sizeY: number;
+	}
+
 	export class WidgetA {
-		public config: Config;
+		public name: string;
+		public config: IConfig;
 
 		constructor(){
+			this.name = "Widget A";
 			this.config = {
 				col: 6,
 				row: 0,
@@ -37,10 +48,18 @@ module app {
 		}
 	}
 
-	export class Config {
-		col: number;
-		row: number;
-		sizeX: number;
-		sizeY: number;
+	export class WidgetB {
+		public name: string;
+		public config: IConfig;
+
+		constructor(){
+			this.name = "Widget B";
+			this.config = {
+				col: 0,
+				row: 0,
+				sizeX: 1,
+				sizeY: 1
+			};
+		}
 	}
 }

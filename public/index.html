@@ -9,16 +9,15 @@
 </head>
 <body ng-app="app">
 	<main ng-controller="myController as ctrl">
-		<h1>{{ctrl.foo}}</h1>
-		<pre>{{ctrl.widgets.widgetA.config}}</pre>
+		<h1>Gridster test</h1>
 		<div gridster="ctrl.gridsterOpts">
-			<span gridster-item class="widget">default</span>
-			<span gridster-item
-				  class="widget"
-				  col="ctrl.widgets.widgetA.config.col"
-				  row="ctrl.widgets.widgetA.config.row"
-				  size-x="ctrl.widgets.widgetA.config.sizeX"
-				  size-y="ctrl.widgets.widgetA.config.sizeY">my item</span>
+			<span class="widget"
+				  gridster-item
+				  ng-repeat="(key, widget) in ctrl.widgets"
+				  col="widget.config.col"
+				  row="widget.config.row"
+				  size-x="widget.config.sizeX"
+				  size-y="widget.config.sizeY">{{widget.name}}</span>
 		</div>
 	</main>
 </body>
