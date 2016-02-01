@@ -10,6 +10,16 @@
 <body ng-app="app">
 	<main ng-controller="myController as ctrl">
 		<h1>{{ctrl.foo}}</h1>
+		<pre>{{ctrl.widgets.widgetA.config}}</pre>
+		<div gridster="ctrl.gridsterOpts">
+			<span gridster-item class="widget">default</span>
+			<span gridster-item
+				  class="widget"
+				  col="ctrl.widgets.widgetA.config.col"
+				  row="ctrl.widgets.widgetA.config.row"
+				  size-x="ctrl.widgets.widgetA.config.sizeX"
+				  size-y="ctrl.widgets.widgetA.config.sizeY">my item</span>
+		</div>
 	</main>
 </body>
 </html>

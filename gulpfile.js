@@ -30,7 +30,7 @@ gulp.task("styles", function(){
 gulp.task("scripts", function(){
 	del.sync(["public/build/*.js"]);
 
-	var app = gulp.src(["public/scripts/**/*.ts", "typings/*.d.ts"])
+	var app = gulp.src(["public/scripts/**/*module.ts", "public/scripts/**/*.ts", "typings/*.d.ts"])
 		.pipe(sourcemaps.init())
 		.pipe(ts({sortOutput: true, target: "es5"}))
 		.pipe(concat("app.js"))
@@ -43,11 +43,10 @@ gulp.task("vendor", function(){
 	var lib = gulp.src(mainBowerFiles())
 		.pipe(filter(["**/*.js", "!bootstrap.js"]))
 		.pipe(concat("libs.js"))
-		.pipe(uglify())
 		.pipe(gulp.dest("public/build/vendor"));
 
 	var vendorStyles = gulp.src(mainBowerFiles())
-		.pipe(filter("**/*.less"))
+		.pipe(filter(["**/*.less", "**/*.css"]))
 		.pipe(less())
 		.pipe(concat("vendorStyles.css"))
 		.pipe(gulp.dest("public/build/vendor"));
