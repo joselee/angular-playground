@@ -1,0 +1,11 @@
+html {
+	height: 100%;
+}
+body {
+	min-height: 100%;
+	background: #f9f9f9;
+}
+
+header, main, footer {
+	padding: 20px;
+}
