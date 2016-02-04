@@ -12,12 +12,12 @@
 	<body ng-app="app" ng-controller="controller as ctrl">
 		<header><h1>{{ctrl.header}}</h1></header>
 		<main>
-			<div class="card">
-				<section class="status green">
-					<i class="fa fa-check status-icon"></i>
+			<div class="card" ng-repeat="process in ctrl.processes">
+				<section class="status" ng-class="process.status">
+					<i class="fa status-icon" ng-class="ctrl.getStatusIcon(process)"></i>
 					<i class="glyphicon glyphicon-option-vertical card-menu-button"></i>
-					<h3 class="process-name">Test process name</h3>
-					<p class="process-description secondary-text">Amazing description text about the process goes here</p>
+					<h3 class="process-name">{{process.name}}</h3>
+					<p class="process-description secondary-text">{{process.description}}</p>
 					<div class="executions">
 						<span class="count">
 							<i class="fa fa-check"></i>324
