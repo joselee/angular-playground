@@ -1,21 +1,62 @@
 <!doctype html>
 <html>
 	<head>
-		<title>ngTest</title>		
+		<title>ngTest</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, width=device-width">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="style.css">
+	</head>
+	<body ng-app="app" ng-controller="controller as ctrl">
+		<header><h1>{{ctrl.header}}</h1></header>
+		<main>
+			<div class="card">
+				<section class="status green">
+					<i class="fa fa-check status-icon"></i>
+					<i class="glyphicon glyphicon-option-vertical card-menu-button"></i>
+					<h3 class="process-name">Test process name</h3>
+					<p class="process-description secondary-text">Amazing description text about the process goes here</p>
+					<div class="executions">
+						<span class="count">
+							<i class="fa fa-check"></i>324
+						</span>
+						<span class="count">
+							<i class="fa fa-play"></i>2
+						</span>						
+						<span class="count">
+							<i class="fa fa-times"></i>42
+						</span>
+						
+					</div>
+				</section>
+				<section class="details">
+					<div>
+						<p class="process-updated secondary-text text-gray">Updated 3 mins ago</p>
+						<p class="process-version secondary-text text-gray">v.12</p>
+						<div class="clearFix"></div>
+					</div>
+					<div class="tags">						
+						<span class="tag">asdf</span>
+						<span class="tag">foo</span>
+						<span class="tag">bar</span>
+					</div>
+					<div class="divider"></div>
+					<div class="actions">
+						<button class="flat-button">run</button>
+						<button class="flat-button">edit</button>
+						<button class="flat-button">view history</button>
+					</div>
+				</section>
+			</div>
+		</main>
+
 		<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 		<script src="http://underscorejs.org/underscore-min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
 		<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.1.2.min.js"></script>	
 		<script src="script.js"></script>
-	</head>
-	<body ng-app="app" ng-controller="controller as ctrl">
-		<header><h1>{{ctrl.header}}</h1></header>
-		<main>
-			
-		</main>
 	</body>
 </html>
