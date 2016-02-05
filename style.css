@@ -18,35 +18,19 @@ body {
 	transform:rotateZ(0);
 }
 
-header, main, footer {
-	padding: 20px;
-}
-
 .clearFix {
 	clear: both;
 	float: none;
 }
 
 .pass {
-	background-color: #16a765;
+	background-color: #16A765;
 }
 .ongoing {
-	background-color: #fbbc05;
+	background-color: #E9AD52;
 }
 .fail {
-	background-color: #d14836;
-}
-.blue {
-	color: #1da1f2;
-}
-.light-gray {	
-    background: #f8f8f8;
-}
-.border-gray {
-	border-color: #d3d3d3;
-}
-.text-gray {
-	color: #767676;
+	background-color: #D14836;
 }
 
 .divider {
@@ -128,9 +112,14 @@ header, main, footer {
 }
 
 .details {
-	padding: 15px 20px;
+	padding: 15px 20px 10px 20px;
 	border-radius: 0 0 2px 2px;
 }
+
+.details .text {
+	color: #767676;
+}
+
 
 .details .process-updated {
 	margin: 0;
@@ -152,7 +141,7 @@ header, main, footer {
 	margin: 0 2px;
 	padding: 2px 10px;
 	background-color: #2196F3;
-	background-color: #767676;
+	background-color: #999;
 	border-radius: 4px;
 	color: white;
 	font-size: 12px;
@@ -177,7 +166,7 @@ header, main, footer {
 	background: none;
 	border: none;
 	font-weight: 500;
-	color: #1da1f2;
+	color: #1DA1F2;
 }
 
 .actions .flat-button:focus {

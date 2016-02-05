@@ -10,8 +10,10 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body ng-app="app" ng-controller="controller as ctrl">
-		<header><h1>{{ctrl.header}}</h1></header>
-		<main>
+		<header class="container">
+			<h1>{{ctrl.header}}</h1>
+		</header>
+		<main class="container">
 			<div class="card" ng-repeat="process in ctrl.processes">
 				<section class="status" ng-class="process.status">
 					<i class="fa status-icon" ng-class="ctrl.getStatusIcon(process)"></i>
@@ -27,20 +29,17 @@
 						</span>						
 						<span class="count">
 							<i class="fa fa-times"></i>42
-						</span>
-						
+						</span>						
 					</div>
 				</section>
 				<section class="details">
-					<div>
-						<p class="process-updated secondary-text text-gray">Updated 3 mins ago</p>
-						<p class="process-version secondary-text text-gray">v.12</p>
+					<div class="text">
+						<p class="process-updated secondary-text">Updated 3 mins ago</p>
+						<p class="process-version secondary-text">v.12</p>
 						<div class="clearFix"></div>
 					</div>
-					<div class="tags">						
-						<span class="tag">asdf</span>
-						<span class="tag">foo</span>
-						<span class="tag">bar</span>
+					<div class="tags" ng-if="process.tags.length > 0">						
+						<span class="tag" ng-repeat="tag in process.tags">{{tag}}</span>
 					</div>
 					<div class="divider"></div>
 					<div class="actions">
