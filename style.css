@@ -43,10 +43,10 @@ body {
 	display: inline-block;
 	position: relative;
     margin: 0 10px 10px 0;
-	width: 300px;
 	background: white;
 	border-radius: 2px;
 	box-shadow: 2px 2px 2px rgba(0,0,0,.33);
+	box-sizing: border-box;
 	vertical-align: top;
 }
 
@@ -83,8 +83,8 @@ body {
 .status .process-name {
 	position: relative;
 	display: inline-block;
-	margin: 0 35px 0 0;
-	max-width: 250px;
+	margin: 0 30px 0 0;
+	max-width: 300px;
 	font-size: 24px;
 	font-weight: 300;
 }
@@ -98,8 +98,11 @@ body {
 .status .process-description {
     position: relative;
     display: block;
-    margin: 20px 0 15px 0;
-    max-width: 335px;    
+    margin: 20px 0 15px 0; 
+}
+
+.status .executions {
+	position: relative;
 }
 
 .status .executions .count {
@@ -196,12 +199,12 @@ body {
   display: block;
 }
 .grid {
-  -webkit-transition: all 400ms ease;
-  transition: all 400ms ease;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 .grid.ng-leave {
-  -webkit-transition: all ease 400ms;
-  transition: all ease 400ms;
+  -webkit-transition: all ease 300ms;
+  transition: all ease 300ms;
 }
 .grid.ng-leave.ng-leave-active {
   -webkit-transform: scale(0.5);
@@ -209,8 +212,8 @@ body {
   opacity: 0;
 }
 .grid.ng-enter {
-  -webkit-transition: all ease 400ms;
-  transition: all ease 400ms;
+  -webkit-transition: all ease 300ms;
+  transition: all ease 300ms;
   -webkit-transition-delay: 500ms;
   transition-delay: 500ms;
   -webkit-transform: scale(0.5);
