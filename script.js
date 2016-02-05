@@ -1,5 +1,5 @@
 (function(){
-	angular.module("app", []).controller("controller", function(){
+	angular.module("app", ["angularGrid"]).controller("controller", function(){
 		this.header = "Processes";
 
 		this.getStatusIcon = function(process){
@@ -39,11 +39,11 @@
 		  "tags": ["staahp"]
 		}, 
 		{
-		  "name": "WOW this guy has a super long title.. but why",
-		  "description": "It also has a super long description 'cause the person who made this process thought it would be helpful in the future",
+		  "name": "WOW this guy has a super ridiculously long title, which is rather impractical.. but what the hey, right?",
+		  "description": "It also has a super long description 'cause the person who made this process thought it would be helpful to be very verbose in a place where they really shouldn't be, because the title and description should be short and sweet",
 		  "version": 66,
 		  "status": "pass",
-		  "tags": []
+		  "tags": ["long", "oversize", "ridiculous", "omg", "buy why?", "staaahp"]
 		}, 
 		{
 		  "name": "ALK-Abello, Inc.",

@@ -4,17 +4,21 @@
 		<title>ngTest</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1, width=device-width">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body ng-app="app" ng-controller="controller as ctrl">
 		<header class="container">
 			<h1>{{ctrl.header}}</h1>
 		</header>
-		<main class="container">
-			<div class="card" ng-repeat="process in ctrl.processes">
+		<main class="container dynamic-grid"
+			  angular-grid="ctrl.processes"
+			  angular-grid-id="processes"
+			  grid-width="300"
+			  gutter-size="15"
+			  refresh-on-img-load="false">
+			<div class="card grid" ng-repeat="process in ctrl.processes">
 				<section class="status" ng-class="process.status">
 					<i class="fa status-icon" ng-class="ctrl.getStatusIcon(process)"></i>
 					<i class="glyphicon glyphicon-option-vertical card-menu-button"></i>
@@ -56,6 +60,7 @@
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
 		<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.1.2.min.js"></script>	
+		<script src="libs/angular-grid.js"></script>
 		<script src="script.js"></script>
 	</body>
 </html>
