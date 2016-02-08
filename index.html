@@ -4,21 +4,37 @@
 		<title>ngTest</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1, width=device-width">
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body ng-app="app" ng-controller="controller as ctrl">
-		<header class="container">
-			<h1>{{ctrl.header}}</h1>
+		<header>
+			<div class="filters">				
+				<md-input-container class="name-filter-input">
+					<label>Filter by name</label>
+					<input type="text" ng-model="ctrl.filterString" ng-change="ctrl.filterByName()">
+				</md-input-container>
+				<div class="sort">
+					<span>Sort:</span>
+					<md-button ng-click="ctrl.sortRandomly()"><i class="fa fa-clock-o"></i></md-button>
+					<md-button ng-click="ctrl.sortAlphabetic()">
+						<i class="fa" ng-class="ctrl.getSortLogo()"></i>
+						<i class="fa fa-remove" ng-if="ctrl.sortType === 'desc'"></i>
+					</md-button>
+				</div>
+				<md-button class="md-raised reset-button" ng-click="ctrl.resetAll()">
+					<i class="fa fa-refresh"></i> Reset all
+				</md-button>
+			</div>
 		</header>
-		<main class="container dynamic-grid"
-			  angular-grid="ctrl.processes"
+		<main class="dynamic-grid"
+			  angular-grid="ctrl.filteredProcesses"
 			  angular-grid-id="processes"
 			  grid-width="300"
 			  gutter-size="15"
 			  refresh-on-img-load="false">
-			<div class="card grid" ng-repeat="process in ctrl.processes">
+			<div class="card grid" ng-repeat="process in ctrl.filteredProcesses">
 				<section class="status" ng-class="process.status">
 					<i class="fa status-icon" ng-class="ctrl.getStatusIcon(process)"></i>
 					<i class="glyphicon glyphicon-option-vertical card-menu-button"></i>
@@ -58,8 +74,12 @@
 		<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 		<script src="http://underscorejs.org/underscore-min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
-		<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.1.2.min.js"></script>	
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>	
+		<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.1.2.min.js"></script>
 		<script src="libs/angular-grid.js"></script>
 		<script src="script.js"></script>
 	</body>
