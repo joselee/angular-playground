@@ -9,3 +9,15 @@ body {
 header, main, footer {
 	padding: 20px;
 }
+
+.chart-container {
+}
+
+.ct-line {
+  stroke: red;
+  stroke-width: 1px;
+}
+
+.ct-label {
+	font-size: 12px;
+}
