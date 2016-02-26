@@ -9,3 +9,20 @@ body {
 header, main, footer {
 	padding: 20px;
 }
+
+.chart-tooltip .tooltip-item .color-dot {
+	display: none;
+}
+.axes .axis path, .axes .axis .tick line {
+	stroke: #999;
+}
+.axes .axis .tick text {
+	fill: #999;
+	font-size: 14px;
+}
+.axes .y2-axis {
+	display: none;
+}
+line.tooltip-line {
+	stroke-opacity: 0.2;
+}
