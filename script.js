@@ -5,7 +5,7 @@
 
 		this.fetch = function(){
 			_this.chartData = {series: []};
-			for (var i = 1; i < 1000; i++){
+			for (var i = 1; i < 60; i++){
 			_this.chartData.series.push({ x: i, test: "wat", label: new Date(), value: Math.floor(Math.random() * 100)});
 			}
 		}
