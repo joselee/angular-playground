@@ -1,5 +1,7 @@
 (function(){
-	angular.module("app", []).controller("controller", function(){
-		this.header = "ngTest";
+	var app = angular.module("app", []);
+
+	app.controller("controller", function(){
+		
 	});
 })();
