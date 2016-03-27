@@ -7,15 +7,33 @@
 		<link rel="stylesheet" href="style.css">
 		<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 		<script src="http://underscorejs.org/underscore-min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
 		<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.1.2.min.js"></script>	
 		<script src="script.js"></script>
 	</head>
 	<body ng-app="app" ng-controller="controller as ctrl">
-		<header><h1>{{ctrl.header}}</h1></header>
 		<main>
-			
+			<div class="col-md-6">
+		        <p class="input-group">
+				<input type="text"
+					   class="form-control"
+				       uib-datepicker-popup
+					   ng-model="ctrl.date"
+					   is-open="ctrl.opened"
+					   datepicker-options="dateOptions"
+					   show-button-bar="false"
+					   show-weeks="false"
+					   ng-required="true"
+					   date-shorthand/>
+				<span class="input-group-btn">
+					<button type="button" class="btn btn-default" ng-click="ctrl.open()">
+						<i class="glyphicon glyphicon-calendar"></i>
+					</button>
+				</span>
+		        </p>
+		      </div>
 		</main>
 	</body>
 </html>
