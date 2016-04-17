@@ -3,10 +3,12 @@
 	
 	app.controller("controller", function(){
 		var self = this;
-		this.date = new Date();
 		this.opened = false;
 		this.open = function(){
 			self.opened = !self.opened;
+		};
+		this.dateOptions =  {
+			initDate: new Date()
 		};
 	});
 
