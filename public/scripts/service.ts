@@ -1,7 +1,11 @@
-module app {
-	export class Service {		
+namespace angularPlayground {
+	export class Service {
 		static $inject = [];
-		constructor(){
+		constructor() {
+		}
+
+		log(text: string) {
+			console.log(text);
 		}
 	}
 	app.service("Service", Service);

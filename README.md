@@ -3,7 +3,7 @@
 Only use the master branch as a clean playground template. Feature testing should happen in separate branches!
 
 #### Libraries included are:
-- angular 1.5.0-rc.1
+- angular 1.5
 - angular-ui (bootstrap)
 - underscore
 - jquery
@@ -16,14 +16,14 @@ Only use the master branch as a clean playground template. Feature testing shoul
 - bower (npm install bower -g)
 - gulp (npm install gulp -g)
 - typescript (npm install typescript -g)
-- tsd (npm install tsd -g)
-- http-server (npm install http-server -g)
+- typings (npm install tsd -g)
+- live-server (npm install live-server -g)
 
 #### Setup:
 - npm install
 - bower install
-- tsd install
+- typings install
 - gulp vendor (*builds js and css from bower libraries*)
 - gulp (*builds and watches application code*)
 
-lastly, open a new terminal, navigate to the the **public/** directory, and run http-server
+lastly, open a new terminal, navigate to the the **public/** directory, and run live-server

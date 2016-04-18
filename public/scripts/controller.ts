@@ -1,10 +1,11 @@
-module app {
+namespace angularPlayground {
 	export class Controller {
 		public foo: string;
 		static $inject = ["Service"];
-		constructor(service){
-			this.foo = "foo";
+		constructor(service) {
+			this.foo = "herp derp";
+			service.log(this.foo);
 		}
 	}
-	app.controller("Controller", Controller);
+	angularPlayground.app.controller("Controller", Controller);
 }

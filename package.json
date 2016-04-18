@@ -9,20 +9,20 @@
     "url": "git+https://github.com/joselee/angular-playground.git"
   },
   "author": "Jose Lee",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/joselee/angular-playground/issues"
   },
   "homepage": "https://github.com/joselee/angular-playground#readme",
   "dependencies": {
     "del": "^2.2.0",
-    "gulp": "^3.9.0",
+    "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-filesize": "0.0.6",
     "gulp-filter": "^3.0.1",
     "gulp-less": "^3.0.5",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-typescript": "^2.10.0",
+    "gulp-typescript": "^2.13.0",
     "main-bower-files": "^2.11.1"
   }
 }

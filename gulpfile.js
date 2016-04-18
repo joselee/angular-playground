@@ -3,7 +3,6 @@ var del = require("del");
 var concat = require("gulp-concat");
 var less = require("gulp-less");
 var ts = require("gulp-typescript");
-var uglify = require("gulp-uglify");
 var sourcemaps = require("gulp-sourcemaps");
 var mainBowerFiles = require("main-bower-files");
 var filter = require("gulp-filter");
@@ -30,7 +29,7 @@ gulp.task("styles", function(){
 gulp.task("scripts", function(){
 	del.sync(["public/build/*.js"]);
 
-	var app = gulp.src(["public/scripts/**/*module.ts", "public/scripts/**/*.ts", "typings/*.d.ts"])
+	var app = gulp.src(["public/scripts/**/*module.ts", "public/scripts/**/*.ts", "typings/browser.d.ts"])
 		.pipe(sourcemaps.init())
 		.pipe(ts({sortOutput: true, target: "es5"}))
 		.pipe(concat("app.js"))
