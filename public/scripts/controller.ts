@@ -3,7 +3,7 @@ namespace angularPlayground {
 		public foo: string;
 		static $inject = ["Service"];
 		constructor(service) {
-			this.foo = "herp derp";
+			this.foo = "Hello Angular!";
 			service.log(this.foo);
 		}
 	}

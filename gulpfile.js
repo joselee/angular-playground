@@ -7,13 +7,14 @@ var sourcemaps = require("gulp-sourcemaps");
 var mainBowerFiles = require("main-bower-files");
 var filter = require("gulp-filter");
 var listFiles = require("gulp-filesize"); /* .pipe(listFiles()) to see files in stream*/
+var webserver = require("gulp-webserver");
 
-gulp.task("default", ["styles", "scripts"], function(){
+gulp.task("default", ["build", "webserver"], function(){
 	gulp.watch(["public/styles/**/*.less"], ["styles"]);
 	gulp.watch(["public/scripts/**/*.ts"], ["scripts"]);
 });
 
-gulp.task("build", ["styles", "scripts"]);
+gulp.task("build", ["libs", "styles", "scripts"]);
 
 gulp.task("styles", function(){
 	del.sync("public/build/*.css");
@@ -37,16 +38,25 @@ gulp.task("scripts", function(){
 		.pipe(gulp.dest("public/build"));
 });
 
-gulp.task("vendor", function(){
-	del.sync(["public/build/vendor/*.*"]);
-	var lib = gulp.src(mainBowerFiles())
+gulp.task("libs", function(){
+	del.sync(["public/build/libs/*.*"]);
+	gulp.src(mainBowerFiles())
 		.pipe(filter(["**/*.js", "!bootstrap.js"]))
 		.pipe(concat("libs.js"))
-		.pipe(gulp.dest("public/build/vendor"));
+		.pipe(gulp.dest("public/build/libs"));
 
-	var vendorStyles = gulp.src(mainBowerFiles())
+	gulp.src(mainBowerFiles())
 		.pipe(filter(["**/*.less", "**/*.css"]))
 		.pipe(less())
-		.pipe(concat("vendorStyles.css"))
-		.pipe(gulp.dest("public/build/vendor"));
+		.pipe(concat("libs.css"))
+		.pipe(gulp.dest("public/build/libs"));
+});
+
+gulp.task("webserver", function() {
+	gulp.src("public").pipe(webserver({
+		port: 8080,
+		livereload: false,
+		directoryListing: false,
+		open: true
+	}));
 });
