@@ -1,14 +1,19 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "system",
     "target": "es5",
-    "noImplicitAny": false,
     "removeComments": true,
-    "preserveConstEnums": true
+    "preserveConstEnums": true,
+    "outDir": "./public/build",
+    "outFile":"./public/build/app.js",
+    "sourceMap": true,
+    "listFiles": true
   },
   "exclude": [
-    "node_modules/",
-    "typings/main/",
+    "public/build",
+    "node_modules",
+    "bower_components",
+    "typings/main",
     "typings/main.d.ts"
   ]
 }

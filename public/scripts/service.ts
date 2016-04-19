@@ -1,12 +1,12 @@
-namespace angularPlayground {
-	export class Service {
-		static $inject = [];
-		constructor() {
-		}
+import {myApp} from "./module";
 
-		log(text: string) {
-			console.log(text);
-		}
+export class MyService {
+	static $inject = [];
+	constructor() {
 	}
-	app.service("Service", Service);
+
+	log(text: string) {
+		console.log(text);
+	}
 }
+angular.module("myApp").service("MyService", MyService);
