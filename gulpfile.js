@@ -10,16 +10,16 @@ var filter = require('gulp-filter');
 var listFiles = require('gulp-filesize'); /* .pipe(listFiles()) to see files in stream*/
 var gutil = require('gulp-util');
 var webserver = require('gulp-webserver');
-var tsProject = ts.createProject('tsconfig.json');
+var tsProject = ts.createProject('tsconfig.json', { sortOutput: true });
 
-gulp.task('default', ['build', 'webserver'], function(){
+gulp.task('default', ['build', 'webserver'], function () {
 	gulp.watch(['public/styles/**/*.less'], ['styles']);
 	gulp.watch(['public/scripts/**/*.ts'], ['scripts']);
 });
 
 gulp.task('build', ['libs', 'styles', 'scripts']);
 
-gulp.task('styles', function(){
+gulp.task('styles', function () {
 	del.sync('public/build/*.css');
 	gulp.src(['public/styles/**/*.less'])
 		.pipe(sourcemaps.init())
@@ -30,26 +30,16 @@ gulp.task('styles', function(){
 		.pipe(gulp.dest('public/build'));
 });
 
-gulp.task('scripts', function(){
+gulp.task('scripts', function () {
 	del.sync(['public/build/*.js', 'public/build/*.map']);
-	tsProject.src()
+	gulp.src(['typings/browser.d.ts', 'public/scripts/**/*Module.ts', 'public/scripts/**/*.ts'])
 		.pipe(sourcemaps.init())
-		.pipe(ts(tsProject)).js
-		.pipe(sourcemaps.write('.'))
+		.pipe(ts(tsProject))
+		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('public/build'));
-		
-		// .pipe(concat('app.js'))
-		// .pipe(gulp.dest('public/build'));
-		
-	// gulp.src(['public/scripts/**/*module.ts', 'public/scripts/**/*.ts', 'typings/browser.d.ts'])
-	// 	.pipe(sourcemaps.init())
-	// 	.pipe(ts({sortOutput: true, target: 'es5'}))
-	// 	.pipe(concat('app.js'))
-	// 	.pipe(sourcemaps.write())
-	// 	.pipe(gulp.dest('public/build'));
 });
 
-gulp.task('libs', function(){
+gulp.task('libs', function () {
 	del.sync(['public/build/libs/*.*']);
 	gulp.src(mainBowerFiles())
 		.pipe(filter(['**/*.js', '!bootstrap.js']))
@@ -63,7 +53,7 @@ gulp.task('libs', function(){
 		.pipe(gulp.dest('public/build/libs'));
 });
 
-gulp.task('webserver', function() {
+gulp.task('webserver', function () {
 	gulp.src('public').pipe(webserver({
 		port: 8080,
 		livereload: false,

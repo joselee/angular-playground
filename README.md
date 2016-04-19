@@ -4,10 +4,10 @@ Only use the master branch as a clean playground template. Feature testing shoul
 
 #### Libraries included are:
 - angular 1.5
-- angular-ui (bootstrap)
+- angular-bootstrap
 - lodash
 - jquery
-- typescript
+- typescript 1.8
 - gulp (compiles and concats typescript and LESS)
 
 #### Global dependencies:

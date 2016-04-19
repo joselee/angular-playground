@@ -1,19 +1,5 @@
 {
   "compilerOptions": {
-    "module": "system",
-    "target": "es5",
-    "removeComments": true,
-    "preserveConstEnums": true,
-    "outDir": "./public/build",
-    "outFile":"./public/build/app.js",
-    "sourceMap": true,
-    "listFiles": true
-  },
-  "exclude": [
-    "public/build",
-    "node_modules",
-    "bower_components",
-    "typings/main",
-    "typings/main.d.ts"
-  ]
+    "outFile": "app.js"
+  }
 }
