@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "postinstall": "typings install"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/joselee/angular-playground.git"
@@ -22,16 +24,13 @@
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-filesize": "0.0.6",
-    "gulp-filter": "^3.0.1",
     "gulp-less": "^3.0.5",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-tslint": "^4.3.5",
     "gulp-typescript": "^2.13.0",
     "gulp-util": "^3.0.7",
-    "gulp-webserver": "^0.9.1",
     "jquery": "^2.2.3",
     "lodash": "^4.11.1",
-    "main-bower-files": "^2.11.1",
     "tslint": "^3.7.4",
     "typescript": "^1.8.10"
   }

@@ -7,10 +7,9 @@ var tsLint = require('gulp-tslint');
 var sourcemaps = require('gulp-sourcemaps');
 var listFiles = require('gulp-filesize'); /* .pipe(listFiles()) to see files in stream*/
 var gutil = require('gulp-util');
-var webserver = require('gulp-webserver');
 var tsProject = ts.createProject('tsconfig.json', { sortOutput: true });
 
-gulp.task('default', ['build', 'webserver'], function () {
+gulp.task('default', ['build'], function () {
 	gulp.watch(['public/styles/**/*.less'], ['styles']);
 	gulp.watch(['public/scripts/**/*.ts'], ['scripts']);
 });
@@ -65,13 +64,4 @@ gulp.task('libs', function () {
 		.pipe(gulp.dest('public/build/libs'));
 	gulp.src(libs.fonts)
 		.pipe(gulp.dest('public/build/fonts'));
-});
-
-gulp.task('webserver', function () {
-	gulp.src('public').pipe(webserver({
-		port: 8080,
-		livereload: false,
-		directoryListing: false,
-		open: false
-	}));
 });
