@@ -1,39 +1,42 @@
 <!doctype html>
 <html>
-	<head>
-		<title>ngTest</title>		
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-		<link rel="stylesheet" href="style.css">
-		<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-		<script src="http://underscorejs.org/underscore-min.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-		<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.1.2.min.js"></script>	
-		<script src="script.js"></script>
-	</head>
-	<body ng-app="app" ng-controller="controller as ctrl">
-		<main>
-			<div class="col-md-6">
-		        <p class="input-group">
-				<input type="text"
-					   class="form-control"
-				       uib-datepicker-popup
-					   ng-model="ctrl.date"
-					   is-open="ctrl.opened"
-					   datepicker-options="ctrl.dateOptions"
-					   show-button-bar="false"
-					   show-weeks="false"
-					   ng-required="true"
-					   date-shorthand/>
-				<span class="input-group-btn">
-					<button type="button" class="btn btn-default" ng-click="ctrl.open()">
-						<i class="glyphicon glyphicon-calendar"></i>
-					</button>
-				</span>
-		        </p>
-		      </div>
-		</main>
-	</body>
+    <head>
+        <title>ngTest</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="http://underscorejs.org/underscore-min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+        <!--<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.3.min.js"></script>-->
+        <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.2.min.js"></script>	
+        <script src="angular-locale_fi-fi.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body ng-app="app" ng-controller="controller as ctrl">
+        <main>
+            <div class="col-md-6">
+                <p class="input-group">
+                    <input type="text" class="form-control"
+                        uib-datepicker-popup="{{::ctrl.dateFormat}}"
+                        alt-input-formats="ctrl.altDateFormats"
+                        ng-model="ctrl.date"
+                        datepicker-options="ctrl.dateOptions"
+                        popup-placement="auto bottom-right"
+                        is-open="ctrl.opened"
+                        show-button-bar="false"
+                        show-weeks="false"
+                        ng-required="true"
+                        date-shorthand />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="ctrl.open()">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </button>
+                    </span>
+                </p>
+            </div>
+        </main>
+    </body>
 </html>

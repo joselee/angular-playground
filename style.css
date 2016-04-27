@@ -9,3 +9,7 @@ body {
 header, main, footer {
 	padding: 20px;
 }
+
+.form-control.ng-invalid.ng-dirty {
+    border: solid 1px red;
+}
