@@ -38,12 +38,15 @@
         console.log('dateFormat:', self.dateFormat);
         console.log('altFormats:', self.altDateFormats);
 
+        let test = false;
         this.opened = false;
         this.open = function () {
             self.opened = !self.opened;
         };
         this.dateOptions = {
-            initDate: new Date()
+            initDate: new Date(),
+            minDate: test ? new Date(): null,
+            maxDate: new Date(1467020000000)
         };
     }]);
 
