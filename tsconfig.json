@@ -5,5 +5,5 @@
         "target":"es5",
         "outFile": "app.js"
     },
-    "files": ["src/app.ts"]
+    "files": ["src/app.ts", "node_modules/@types/**/index.d.ts"]
 }

@@ -10,11 +10,7 @@ Only use the master branch as a clean playground template. Feature testing shoul
 - gulp (compiles and concats typescript and LESS)
 
 #### Global dependencies:
-- node (installer from nodejs.org)
-- npm (comes with node)
-- gulp (npm install gulp -g)
-- typescript (npm install typescript -g)
-- typings (npm install tsd -g)
+- node, npm, gulp
 
 #### Setup & run:
 - npm install
