@@ -6,7 +6,7 @@ Only use the master branch as a clean playground template. Feature testing shoul
 - angular-bootstrap
 - lodash
 - jquery
-- typescript 1.8
+- typescript
 - gulp (compiles and concats typescript and LESS)
 
 #### Global dependencies:
@@ -18,5 +18,4 @@ Only use the master branch as a clean playground template. Feature testing shoul
 
 #### Setup & run:
 - npm install
-- gulp (*builds and watches*)
-- run any webserver in public/
+- gulp (*builds, watches, and runs web server*)

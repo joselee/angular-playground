@@ -1,5 +1,2 @@
-logs
 node_modules
-public/build
-typings
-.npm
+dist

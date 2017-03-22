@@ -1,5 +1,9 @@
 {
-  "compilerOptions": {
-    "outFile": "app.js"
-  }
+    "compilerOptions": {
+        "module": "amd",
+        "moduleResolution": "node",
+        "target":"es5",
+        "outFile": "app.js"
+    },
+    "files": ["src/app.ts"]
 }
