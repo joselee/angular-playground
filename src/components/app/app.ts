@@ -1,7 +1,7 @@
 export class AppController {
     static $inject = [];
     constructor() {
-        
+        angular.copy({});
     }
 }
 

@@ -1,4 +1,3 @@
-declare const angular;
 import { App } from './components/app/app';
 
 angular.module('app', ['templates', 'ui.bootstrap'])
