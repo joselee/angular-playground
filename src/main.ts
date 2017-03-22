@@ -1,8 +1,8 @@
-import * as angular from 'angular';
-import { Controller } from './controller';
+declare const angular;
+import { App } from './components/app/app';
 
 angular.module('app', ['templates', 'ui.bootstrap'])
-    .controller('Controller', Controller);
+    .component(App.name, App);
 
 angular.element(() => {
     console.log('bootstrapping application!');

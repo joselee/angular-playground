@@ -44,7 +44,7 @@ gulp.task('build', ['ts', 'less', 'templates', 'libs']);
 
 gulp.task('ts', (done) => {
     let tsResult = tsProject.src().pipe(tsProject());
-    return tsResult.js.pipe(insert.append(`require('app');`)).pipe(gulp.dest(config.dist));
+    return tsResult.js.pipe(insert.append(`require('main');`)).pipe(gulp.dest(config.dist));
 });
 
 gulp.task('less', () => {
